@@ -1,0 +1,23 @@
+{
+  "name": "batch-write-all",
+  "version": "0.0.1",
+  "description": "a simple drop-in replacement for dynamodb.batchwrite without 25 item limitation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mim-Armand/dynamo_batch_write_all.git"
+  },
+  "author": "mim Armand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mim-Armand/dynamo_batch_write_all/issues"
+  },
+  "homepage": "https://github.com/mim-Armand/dynamo_batch_write_all#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "aws-sdk": "^2.935.0"
+  }
+}
