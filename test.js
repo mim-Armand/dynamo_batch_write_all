@@ -1,10 +1,11 @@
 const { batchWriteAll } = require("./index");
 
 const AWS = require("aws-sdk");
+const awsProfile = 'default';
 
 AWS.config.update({region: "us-east-1"});
 
-const credentials = new AWS.SharedIniFileCredentials({profile: 'fff'});
+const credentials = new AWS.SharedIniFileCredentials({profile: awsProfile});
 AWS.config.credentials = credentials;
 
 const dynamodb = new AWS.DynamoDB();
