@@ -1,6 +1,6 @@
 {
   "name": "batch-write-all",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "a simple drop-in replacement for dynamodb.batchwrite without 25 item limitation",
   "main": "index.js",
   "scripts": {

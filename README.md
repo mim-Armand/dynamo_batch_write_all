@@ -1,6 +1,6 @@
-# dynamo_batch_write_all
+# Dynamodb batch_write_all
 a simple drop-in replacement for dynamodb.batchwrite without 25 item limitation
-The only change you need to make is to pass a reference to dynamodb as the first parameter and like that you wouldn't need to change anything else!
+The only change you need to make is to pass a reference to dynamodb (or document client) as the first parameter and like that you wouldn't need to change anything else!
 
 # Why? ( motivation ):
 > This was created because in most of the cases the developer uses `batchWrite` without knowing the limitation or not expecting to pass the 25 item limitation, but ( and when ) they need to solve it they'd need to make additional changes and pottentially introducing new bugs to their work.. this module is attempting to be as close to a drop-in replacement as possible with only one change in the code ( which would be to pass an instance to dynamodb ).

@@ -33,7 +33,13 @@ const batchWriteAll = (dynamodb, params, callback) => {
       if (!currentParams[i.TableName]) currentParams[i.TableName] = [];
       currentParams[i.TableName].push({[i.operation]: {[itemKey]: i[itemKey]}});
     });
-    return dynamodb.batchWriteItem({RequestItems: currentParams}).promise();
+    if( typeof dynamodb.batchWriteItem !== 'undefined') {
+      return dynamodb.batchWriteItem({RequestItems: currentParams}).promise();
+    }else if( typeof dynamodb.batchWrite !== 'undefined') {
+      return dynamodb.batchWrite({RequestItems: currentParams}).promise();
+    }else{
+      throw new Error('The first argument passed to `batchWriteAll` should be an instance of dynamoDb or dynamoDB document client.');
+    }
   }));
   if (!!callback) return promiseTwoCallback(promises, callback)
   return {promise: () => promises};
